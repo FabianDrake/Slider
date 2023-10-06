@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="es" dir="ltr">
+
+  <head>
+      <meta charset="UTF-8">
+      <title>Mark I slider</title>
+      <link rel="stylesheet" href="style.css">
+      <!-- Boxicons CDN Link -->
+      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+  <body>
+    <div class="sidebar">
+      <!-- Aqui empieza la parte de informacion de menu -->
+      <div class="logo-details">
+        <!-- TODO: Poner un logo de Menu -->
+        <i class=''></i>
+          <div class="logo_name">Menu</div>
+        <i class='bx bx-menu' id="btn" ></i>
+      </div>
+      <!-- Aqui empieza la lista de opciones del menu  -->
+      <ul class="nav-list">
+        <li>
+            <i class='bx bx-search' ></i>
+            <input type="text" placeholder=" Buscar...">
+            <span class="tooltip">Buscar</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bxs-dashboard' ></i>
+            <span class="links_name">Tablero</span>
+          </a>
+            <span class="tooltip">Tablero</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Usuario</span>
+          </a>
+            <span class="tooltip">Usuario</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-history'></i>
+            <span class="links_name">Recientes</span>
+          </a>
+            <span class="tooltip">Recientes</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-save'></i>
+            <span class="links_name">Almacenamiento</span>
+          </a>
+            <span class="tooltip">Almacenamiento</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-folder' ></i>
+            <span class="links_name">Carpetas</span>
+          </a>
+            <span class="tooltip">Carpetas</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-trash'></i>
+            <span class="links_name">Papelera</span>
+          </a>
+            <span class="tooltip">Papelera</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-star'></i>
+            <span class="links_name">Destacados</span>
+          </a>
+            <span class="tooltip">Destacados</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Configuracion</span>
+          </a>
+            <span class="tooltip">Configuracion</span>
+        </li>
+        <!-- Aqui empieza la parte del profile -->
+        <li class="profile">
+            <div class="profile-details">
+              <img src="profile.jpg" alt="profile jpg">
+              <div class="name_job">
+                <div class="name">Fabian Talavera</div>
+                <div class="job">Administador</div>
+              </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out" ></i>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Esta parte es el exterior de la box del menu -->
+    <section class="home-section">
+      <div class="text">Mi unidad</div>
+    </section>
+
+    <!-- Aqui empiezan los scripts para la animacion de la box menu -->
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      let searchBtn = document.querySelector(".bx-search");
+
+      closeBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("open");
+        menuBtnChange();//llama a la funcion(optional)
+      });
+
+      searchBtn.addEventListener("click", ()=>{ // Sidebar abre cuando picas el logo button buscar
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //llama la funcion (optional)
+      });
+
+      // cambiar el botón de la barra lateral(optional)
+      function menuBtnChange() {
+        if(sidebar.classList.contains("open")){
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//remplaza los iconos clase
+        }else {
+          closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//remplaza los iconos de la clase
+        }
+      }
+    </script>
+
+  </body>
+</html>
